@@ -1,8 +1,7 @@
 import test from 'tape'
-import tor-log from '../index'
+import log from '../index'
 
-test(`tor-log`, assert => {
-  assert.ok(tor-log, `exports something`)
+test(`log`, assert => {
+  assert.ok(log, `exports something`)
   assert.end()
 })
-

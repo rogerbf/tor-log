@@ -1,7 +1,7 @@
 import test from 'tape'
 import log from '../index'
 
-test(`log`, assert => {
-  assert.ok(log, `exports something`)
+test(`exports a function`, assert => {
+  assert.equal(typeof (log), `function`)
   assert.end()
 })

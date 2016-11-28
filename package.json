@@ -1,7 +1,7 @@
 {
   "name": "tor-log",
   "version": "0.0.1",
-  "description": "",
+  "description": "## usage",
   "main": "./distribution/index.js",
   "scripts": {
     "test": "tape -r babel-register ./source/**/*.test.js | tap-dot",
@@ -42,5 +42,13 @@
     "distribution",
     "README.md"
   ],
-  "dependencies": {}
+  "dependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rogerbf/tor-log.git"
+  },
+  "bugs": {
+    "url": "https://github.com/rogerbf/tor-log/issues"
+  },
+  "homepage": "https://github.com/rogerbf/tor-log#readme"
 }

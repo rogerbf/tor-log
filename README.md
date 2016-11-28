@@ -1,2 +1,6 @@
 # tor-log
 
+## usage
+
+```javascript
+```

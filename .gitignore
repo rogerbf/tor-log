@@ -6,3 +6,4 @@ tor-log*.tgz
 npm-debug.log
 .nyc_output
 coverage
+NOTES

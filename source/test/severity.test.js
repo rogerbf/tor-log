@@ -1,5 +1,5 @@
 import test from 'tape'
-import severity from '../library/severity.js'
+import severity from '../library/severity'
 
 test(`is a function`, assert => {
   assert.equal(typeof (severity), `function`)

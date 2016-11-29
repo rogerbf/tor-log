@@ -1,5 +1,5 @@
 import test from 'tape'
-import parse from '../library/parse.js'
+import parse from '../library/parse'
 import { Readable } from 'stream'
 
 // const createTestStream = (data, objectMode = false) => {

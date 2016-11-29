@@ -1,5 +1,5 @@
 import test from 'tape'
-import message from '../library/message.js'
+import message from '../library/message'
 
 test(`is a function`, assert => {
   assert.equal(typeof (message), `function`)

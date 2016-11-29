@@ -1,5 +1,5 @@
 import test from 'tape'
-import timestamp from '../library/timestamp.js'
+import timestamp from '../library/timestamp'
 
 test(`is a function`, assert => {
   assert.equal(typeof (timestamp), `function`)

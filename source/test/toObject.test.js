@@ -1,5 +1,5 @@
 import test from 'tape'
-import toObject from '../library/toObject.js'
+import toObject from '../library/toObject'
 
 test(`is a function`, assert => {
   assert.equal(typeof (toObject), `function`)

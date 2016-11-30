@@ -6,6 +6,14 @@ test(`is a function`, assert => {
   assert.end()
 })
 
+test(`return payload, unchanged`, assert => {
+  const payload = { data: `notice] Configuration file "/usr/local/etc/tor/torrc" not present, using reasonable defaults.` }
+  const expected = payload
+  const actual = timestamp(payload)
+  assert.deepEqual(actual, expected)
+  assert.end()
+})
+
 test(`expected output #1`, assert => {
   const payload = { data: `Nov 23 11:27:43.438 [notice] Configuration file "/usr/local/etc/tor/torrc" not present, using reasonable defaults.` }
   const expected = {

@@ -14,24 +14,30 @@ const UTCMonthMap = {
 }
 
 export default payload => {
-  const [ threeLetterMonth, date, time ] = payload.data
-    .slice(0, payload.data.indexOf(`[`))
-    .trim()
-    .split(` `)
-  // [`Nov`, `23`, `11:27:43.438`]
+  let timestamp
 
-  const [ hours, minutes, seconds, milliseconds ] = time.split(/\D/g)
-  // [`11`, `27`, `43`, `438`]
+  try {
+    const [ threeLetterMonth, date, time ] = payload.data
+      .slice(0, payload.data.indexOf(`[`))
+      .trim()
+      .split(` `)
+    // [`Nov`, `23`, `11:27:43.438`]
 
-  const timestamp = new Date(
-    new Date().getFullYear(),
-    UTCMonthMap[threeLetterMonth],
-    date,
-    hours,
-    minutes,
-    seconds,
-    milliseconds
-  ).toISOString()
+    const [ hours, minutes, seconds, milliseconds ] = time.split(/\D/g)
+    // [`11`, `27`, `43`, `438`]
+
+    timestamp = new Date(
+      new Date().getFullYear(),
+      UTCMonthMap[threeLetterMonth],
+      date,
+      hours,
+      minutes,
+      seconds,
+      milliseconds
+    ).toISOString()
+  } catch (err) {
+    return { ...payload }
+  }
 
   return { ...payload, timestamp }
 }

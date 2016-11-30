@@ -15,8 +15,8 @@
     "repl": "npm run build && babel-node",
     "snyk": "snyk test",
     "watch:test": "onchange \"source/*.js\" \"source/**/*.js\" -- npm run test",
-    "test:coverage": "nyc --reporter=lcov --require babel-register npm test && nyc report",
-    "watch:test:coverage": "onchange \"source/*.js\" \"source/**/*.js\" -- npm run test:coverage"
+    "coverage": "nyc --reporter=lcov --require babel-register npm test && nyc report",
+    "watch:coverage": "onchange \"source/*.js\" \"source/**/*.js\" -- npm run test:coverage"
   },
   "keywords": [],
   "author": "rogerbf <roger@bergfalk.nu> (http://bergfalk.nu/)",

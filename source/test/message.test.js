@@ -13,3 +13,11 @@ test(`expected output`, assert => {
   assert.deepEqual(actual, expected)
   assert.end()
 })
+
+test(`return payload unmodified`, assert => {
+  const payload = { data: `Nov 23 11:27:45.000 [notice` }
+  const expected = payload
+  const actual = message(payload)
+  assert.deepEqual(actual, expected)
+  assert.end()
+})

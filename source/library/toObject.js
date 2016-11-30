@@ -1,3 +1,1 @@
-export default data => {
-  return { data }
-}
+export default data => ({ data })

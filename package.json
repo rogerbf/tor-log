@@ -1,7 +1,7 @@
 {
   "name": "tor-log",
   "version": "0.0.1",
-  "description": "## usage",
+  "description": "parse tor stdout, add events based on severity",
   "main": "./distribution/index.js",
   "scripts": {
     "test": "tape -r babel-register ./source/**/*.test.js | tap-dot",

@@ -44,7 +44,7 @@
   ],
   "dependencies": {
     "buffer-split-transform": "^1.0.0",
-    "lumberman": "^0.0.1"
+    "lumberman": "^0.0.2"
   },
   "repository": {
     "type": "git",

@@ -42,7 +42,10 @@
     "distribution",
     "README.md"
   ],
-  "dependencies": {},
+  "dependencies": {
+    "buffer-split-transform": "^1.0.0",
+    "lumberman": "^0.0.1"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/rogerbf/tor-log.git"

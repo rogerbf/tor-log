@@ -35,7 +35,27 @@ test(`expected output`, assert => {
   const parser = parse()
 
   const expected = {
-    eventCount: 3
+    eventCount: 3,
+    data: [
+      {
+        data: `Nov 23 11:27:43.438 [notice] Configuration file "/usr/local/etc/tor/torrc" not present, using reasonable defaults.`,
+        timestamp: `2016-11-23T10:27:43.438Z`,
+        severity: `notice`,
+        message: `Configuration file "/usr/local/etc/tor/torrc" not present, using reasonable defaults.`
+      },
+      {
+        data: `Nov 23 11:27:43.446 [warn] Warning from libevent: kq_init: detected broken kqueue; not using.: Invalid argument`,
+        timestamp: `2016-11-23T10:27:43.446Z`,
+        severity: `warn`,
+        message: `Warning from libevent: kq_init: detected broken kqueue; not using.: Invalid argument`
+      },
+      {
+        data: `Nov 23 11:27:43.446 [notice] Opening Socks listener on 127.0.0.1:9050`,
+        timestamp: `2016-11-23T10:27:43.446Z`,
+        severity: `notice`,
+        message: `Opening Socks listener on 127.0.0.1:9050`
+      }
+    ]
   }
 
   const actual = {
@@ -50,6 +70,7 @@ test(`expected output`, assert => {
 
   parser.on(`end`, () => {
     assert.deepEqual(actual.eventCount, expected.eventCount)
+    assert.deepEqual(actual.data, expected.data)
     assert.end()
   })
 

@@ -1,6 +1,6 @@
 {
   "name": "tor-log",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "parses tor stdout and adds named events for each severity level",
   "main": "./distribution/index.js",
   "scripts": {

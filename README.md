@@ -1,11 +1,13 @@
 # tor-log
 
+Parses tor stdout and adds named events for each severity level.
+
 ## usage
 
 ```javascript
-import createLogger from 'tor-log'
+import consumeStdout from 'tor-log'
 
-const log = createLogger(torInstance)
+const log = consumeStdout(torInstance)
 // torInstance is a spawned child process
 
 log.on(`notice`, console.log)

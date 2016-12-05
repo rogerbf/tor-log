@@ -1,8 +1,8 @@
 import test from 'tape'
 import { Readable } from 'stream'
-import createLog from '../index'
+import consumeStdout from '../index'
 
-const createTestStream = (data, objectMode = false) => {
+const createTestStream = (data = [], objectMode = false) => {
   return Object.assign(
     new Readable({
       read () {
@@ -27,7 +27,15 @@ const testdata = [
 ]
 
 test(`exports a function`, assert => {
-  assert.equal(typeof (createLog), `function`)
+  const source = createTestStream()
+  const sourceOnObject = { stdout: source }
+  assert.equal(consumeStdout(source).constructor.name, `Transform`)
+  assert.equal(consumeStdout(sourceOnObject).constructor.name, `Transform`)
+  assert.end()
+})
+
+test(`returns a transform stream`, assert => {
+  assert.equal()
   assert.end()
 })
 
@@ -144,7 +152,7 @@ test(`expected output`, assert => {
     }
   }
 
-  const log = createLog(source)
+  const log = consumeStdout(source)
 
   assert.equal(log._readableState.objectMode, true)
 

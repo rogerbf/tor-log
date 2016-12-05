@@ -4,7 +4,7 @@ import split from 'buffer-split-transform'
 
 export default readable => {
   return lumberman({
-    source: readable,
+    source: readable.stdout ? readable.stdout : readable,
     transform: [ split(), parseTransform() ],
     emit: [
       { eventName: `debug`, filter: data => data.severity === `debug` },

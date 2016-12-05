@@ -4,7 +4,6 @@ import severity from './severity'
 import message from './message'
 
 export default (line) => (
-  [ timestamp, severity, message ].reduce((status, extractor) => {
-    return extractor(status)
-  }, toObject(line))
+  [ timestamp, severity, message ]
+  .reduce((status, extractor) => extractor(status), toObject(line))
 )
